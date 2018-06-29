@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .chatbox{
+        width: 90%;
+        height: 400px;
+        margin:auto;
+        border: 2px grey solid;
+        border-radius: 2%;
+        overflow: scroll;
+      }
+      .message{
+        font: 12px arial serif;
+        color: black;
+        margin-bottom: 20px;
+      }
+      .username{
+        font: bold 12px courier monospace;
+        color: red;
+      }
+      .timestamp{
+        font: lighter 8px arial serif;
+        float:right;
+      }
+    </style>
+</head>
+<body>
+  <div class="chatbox">
+    {% for (user, message, time) in msglog %}
+    <p class="message"><span class="username"> {{user}}: </span>
+      {{message}} <span class="timestamp">{{time}}</span>
+    </p>
+    {% endfor %}
+  </div>
+    <form method="post">
+      <input type="text" placeholder="Username" required autocomplete="on" name="username">
+      <textarea rows="3" cols="70" name="msg"></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+</body>
+</html>

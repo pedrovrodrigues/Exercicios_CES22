@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server</title>
+</head>
+<body>
+    {% for arc in archives %}
+        <p><a href="/uploads/{{arc}}">{{arc}}</a></p>
+    {% endfor %}
+    <form enctype="multipart/form-data" method="post">
+        <input type="file" name="newFile">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
