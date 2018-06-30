@@ -16,7 +16,7 @@ class Decorator(DrinkComponent):
     def getTotalCost(self):
         return self.component.getTotalCost() + DrinkComponent.getTotalCost(self)
     def getDescription(self):
-        return self.component.getDescription() + ‘ ‘+DrinkComponent.getDescription(self)
+        return self.component.getDescription() + " " + DrinkComponent.getDescription(self)
 
 class Espresso(Decorator):
     cost = 0.75
@@ -50,11 +50,11 @@ class Chocolate(Decorator):
 
 def main():
     cappuccino = Espresso(FoamedMilk(Mug()))
-    print(cappuccino.getDescription() + ": $" + cappuccino.getTotalCost())
+    print(cappuccino.getDescription() + ": $" + str(cappuccino.getTotalCost()))
 
     cafeMocha = Espresso(SteamedMilk(Chocolate(Whipped(Decaf(Mug())))))
 
-    print(cafeMocha.getDescription() + ": $" + cafeMocha.getTotalCost())
+    print(cafeMocha.getDescription() + ": $" + str(cafeMocha.getTotalCost()))
 
 if __name__ == "__main__":
     main()

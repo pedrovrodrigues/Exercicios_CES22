@@ -11,7 +11,7 @@ class Leaf(Component):
         Component.__init__(self, *args, **kw)
 
     def component_function(self):
-        print( "some function“)
+        print("some function")
 
 class Composite(Component):
     def __init__(self, *args, **kw):

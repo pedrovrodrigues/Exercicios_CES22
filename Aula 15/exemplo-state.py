@@ -1,7 +1,7 @@
 import abc
 
 class Context:
-""" Define the interface of interest to clients. Maintain an instance of a ConcreteState subclass that defines the current state. """
+    """ Define the interface of interest to clients. Maintain an instance of a ConcreteState subclass that defines the current state. """
 
     def __init__(self, state):
          self._state = state
@@ -10,7 +10,7 @@ class Context:
          self._state.handle()
 
 class State(metaclass=abc.ABCMeta):
-""" Define an interface for encapsulating the behavior associated with a particular state of the Context. """
+    """ Define an interface for encapsulating the behavior associated with a particular state of the Context. """
 
     @abc.abstractmethod
     def handle(self):
@@ -22,7 +22,8 @@ class ConcreteStateA(State):
     """
 
     def handle(self):
-        pass
+        print("AAAAA")
+
 
 
 class ConcreteStateB(State):
@@ -31,7 +32,7 @@ class ConcreteStateB(State):
     """
 
     def handle(self):
-        pass
+        print("BBBBB")
 
 def main():
     concrete_state_a = ConcreteStateA()

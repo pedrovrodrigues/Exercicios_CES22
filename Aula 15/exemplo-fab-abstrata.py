@@ -57,7 +57,7 @@ class ConcreteProductA1(AbstractProductA):
     Implement the AbstractProduct interface.
     """
     def interface_a(self):
-        pass
+        print("sou um objeto a1")
 
 class ConcreteProductA2(AbstractProductA):
     """
@@ -65,7 +65,7 @@ class ConcreteProductA2(AbstractProductA):
     Implement the AbstractProduct interface.
     """
     def interface_a(self):
-        pass
+        print("sou um objeto a2")
 
 class AbstractProductB(metaclass=abc.ABCMeta):
     """
@@ -81,7 +81,7 @@ class ConcreteProductB1(AbstractProductB):
     Implement the AbstractProduct interface.
     """
     def interface_b(self):
-        pass
+        print("sou um objeto b1")
 
 class ConcreteProductB2(AbstractProductB):
     """
@@ -89,7 +89,7 @@ class ConcreteProductB2(AbstractProductB):
     Implement the AbstractProduct interface.
     """
     def interface_b(self):
-        pass
+        print("sou um objeto b2")
 
 def main():
     for factory in (ConcreteFactory1(), ConcreteFactory2()):
